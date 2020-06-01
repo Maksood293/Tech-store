@@ -26,6 +26,7 @@ class App extends Component {
         <Route path='/ProductDetail' component={ProductDetail}/>
         <Route path='/About' component={About}/>
         <Route path='/Cart' component={Cart}/>
+        <Route path='/Contact' component={Contact}/>
         <Route path='/Default' component={Default}/>
       </Switch>
       <Modal/>

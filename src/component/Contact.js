@@ -1,12 +1,37 @@
-import React from 'react';
+import React,{Component} from 'react';
 import styled from 'styled-components';
 import Footer from './Footer';
 
 
-export default function Contact() {
+class Contact extends Component {
+	constructor(props) {
+	  super(props);
+	  this.state = {Fname: '',
+					Lname:'',
+					Email:'',
+					phone:'',
+					msg:''
+	            };
+	}
+	handleSubmit=(event)=>{
+		alert('form was submitted');
+		event.preventDefault();
+		this.setState({Fname:''});
+		this.setState({Lname:''});
+		this.setState({Email:''});
+		this.setState({phone:''});
+		this.setState({msg:''});
+	}
+  
+	handleChange=(event)=> {
+	  this.setState({[event.target.name]: event.target.value});
+	}
+	
+	
+	render() {
     return (
            <>
-		   <div>
+		 <div>
 		   
 		   <div style={{  left:'-90px', padding:'100px 200px',marginBottom:'-140px', zIndex:'1'}}>
 			   <h1 style={{letterSpacing:'7px',fontSize:'3rem',fontWeight:'bold'}} >Contact us</h1>
@@ -48,29 +73,30 @@ export default function Contact() {
 		</div>
 		<div className="contactForm">
 			<h2>Send a Message</h2>
-			<div className="formBox">
+			<form  onSubmit={this.handleSubmit}>
+			<div className=" formBox">
 				<div className="inputBox w50">
-					<input type="text" name="" required />
+					<input type="text" name="Fname" required value={this.state.Fname} onChange={this.handleChange}/>
 					<span>First Name</span>
 					
 				</div>
 				<div className="inputBox w50">
-					<input type="text" name="" required />
+					<input type="text" name="Lname" required value={this.state.Lname} onChange={this.handleChange}/>
 					<span>Last Name</span>
 					
 				</div>
 				<div className="inputBox w50">
-					<input type="text" name="" required />
+					<input type="email" name="Email" required  value={this.state.Email} onChange={this.handleChange}/>
 					<span>Email Address</span>
 					
 				</div>
 				<div className="inputBox w50">
-					<input type="text" name="" required />
+					<input type="text" name="phone" required  value={this.state.phone} onChange={this.handleChange}/>
 					<span>Mobile Number</span>
 					
 				</div>
 				<div className="inputBox w100">
-					<textarea name="" required></textarea>
+					<textarea name="msg"  value={this.state.msg} onChange={this.handleChange}></textarea>
 					<span>Write Your Message Here...</span>
 					
 				</div>
@@ -78,19 +104,20 @@ export default function Contact() {
 					<input type="submit" value="Send" />
 				</div>	
 					
-				
-				
+	
 			</div>
+			</form>
 			
 		</div>
 	</div>
     </section>
- </MainSection1>
- <Footer/>
- </>
+  </MainSection1>
+  <Footer/>  
+  </>
        
     )
-}
+}}
+export default Contact;
 const MainSection1 = styled.section`
 *{
 	margin: 0;
