@@ -96,7 +96,7 @@ class Contact extends Component {
 					
 				</div>
 				<div className="inputBox w100">
-					<textarea name="msg"  value={this.state.msg} onChange={this.handleChange}></textarea>
+					<textarea name="msg" required   value={this.state.msg} onChange={this.handleChange}></textarea>
 					<span>Write Your Message Here...</span>
 					
 				</div>
