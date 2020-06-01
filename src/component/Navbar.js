@@ -8,7 +8,7 @@ export default class Navbar extends Component {
     render() {
         return (
            <>
-           <NavWrapper className='navbar navbar-expand-sm  navbar-dark px-sm-5' style={{zIndex:'2'}} >
+           <NavWrapper className='navbar sticky-top navbar-expand-sm  navbar-dark px-sm-5' style={{zIndex:'2'}} >
             <Link to='/' style={{textDecoration:'none'}}>
                <h2 style={{color:'#fff',fontWeight:'bold'}}>Tech<span className='text-muted' style={{fontWeight:'bold',marginLeft:'4px'}}>Store</span></h2>
                 

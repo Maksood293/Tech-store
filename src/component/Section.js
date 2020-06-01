@@ -97,7 +97,7 @@ background:var(--mainBlue);
 overFlow:hidden;
 
 .Main{
-    padding-top:15rem;
+    padding-top:12rem;
    
 }
 .typo{
